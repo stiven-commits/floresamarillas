@@ -408,8 +408,9 @@
   const photoWrap = document.getElementById('photoWrap'), photo = document.getElementById('photo');
   photo.addEventListener('error', () => { photoWrap.hidden = true; });
   function openMsg(m) {
-    document.getElementById('title').textContent = m.title;
-    document.getElementById('text').textContent = m.text;
+    const ti = document.getElementById('title'), tx = document.getElementById('text');
+    ti.textContent = m.title; ti.hidden = !m.title;
+    tx.textContent = m.text; tx.classList.toggle('long', m.text.length > 140);
     if (m.photo) { photoWrap.hidden = false; photo.src = m.photo; } else photoWrap.hidden = true;
     ov.hidden = false; modal = true; held.clear(); hideHint();
   }
