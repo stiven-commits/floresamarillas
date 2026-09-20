@@ -406,12 +406,14 @@
   // ---------- ventana de mensaje ----------
   const ov = document.getElementById('overlay'), card = document.getElementById('card');
   const photoWrap = document.getElementById('photoWrap'), photo = document.getElementById('photo');
-  photo.addEventListener('error', () => { photoWrap.hidden = true; });
+  photo.addEventListener('error', () => { photoWrap.hidden = true; card.classList.remove('withphoto'); });
   function openMsg(m) {
     const ti = document.getElementById('title'), tx = document.getElementById('text');
     ti.textContent = m.title; ti.hidden = !m.title;
+    card.classList.toggle('full', !!m.full); tx.scrollTop = 0;
     tx.textContent = m.text; tx.classList.toggle('long', m.text.length > 140);
     if (m.photo) { photoWrap.hidden = false; photo.src = m.photo; } else photoWrap.hidden = true;
+    card.classList.toggle('withphoto', !!m.photo);
     ov.hidden = false; modal = true; held.clear(); hideHint();
   }
   function closeMsg() { ov.hidden = true; modal = false; }

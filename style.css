@@ -36,3 +36,24 @@ body.intro #hint{opacity:0;pointer-events:none}
 #card h2{font-size:40px}
 #card p{font-size:30px;line-height:1.25}
 #text.long{font-size:25px;line-height:1.25}
+#text{white-space:pre-line;touch-action:pan-y;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+#card.full{max-width:none;width:100%;height:100%;display:flex;flex-direction:column;padding:44px 22px 26px}
+#card.full #text{flex:1;min-height:0;max-height:none;overflow-y:auto;text-align:left;padding-right:6px}
+#card.full #photoWrap{flex:none;max-width:70%}
+#card.full #photo{max-height:26vh}
+#card.full .corner{width:56px;height:56px}
+#card.full .tl{top:-12px;left:-12px}#card.full .tr{top:-12px;right:-12px}
+#card.full .bl{bottom:-12px;left:-12px}#card.full .br{bottom:-12px;right:-12px}
+#card.full .top{top:-22px}
+#overlay:has(#card.full){padding:14px}
+
+/* foto tipo sticker sobre el borde superior de la tarjeta */
+#card #photoWrap{position:relative;z-index:2;width:fit-content;max-width:78%;margin:0 auto 14px;padding:10px;background:#fff;border-radius:18px;
+  box-shadow:0 10px 24px rgba(0,0,0,.5),0 0 0 2px rgba(0,0,0,.06);transform:rotate(-4deg)}
+#card #photo{display:block;width:auto;max-width:100%;height:auto;max-height:30vh;border-radius:10px;object-fit:cover}
+#card.withphoto{padding-top:0}
+#card.withphoto #photoWrap{margin-top:-70px}
+#card.withphoto .top{display:none}
+#card.full #photoWrap{max-width:70%}
+#card.full #photo{max-height:30vh}
+#overlay:has(#card.full){padding:84px 14px 14px}
