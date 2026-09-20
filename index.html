@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>Universo de flores</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+
+
+<div id="overlay" hidden>
+  <div id="card" role="dialog" aria-modal="true">
+    <svg class="corner tl" viewBox="0 0 100 100"><use href="#fl"/></svg>
+    <svg class="corner tr" viewBox="0 0 100 100"><use href="#fl"/></svg>
+    <svg class="corner bl" viewBox="0 0 100 100"><use href="#fl"/></svg>
+    <svg class="corner br" viewBox="0 0 100 100"><use href="#fl"/></svg>
+    <svg class="top" viewBox="0 0 100 100"><use href="#fl"/></svg>
+    <figure id="photoWrap" hidden><img id="photo" alt=""></figure>
+    <h2 id="title"></h2>
+    <p id="text"></p>
+  </div>
+</div>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="fl">
+      <g fill="#ffd93b" stroke="#e8a900" stroke-width="1.5">
+        <ellipse cx="50" cy="24" rx="11" ry="20"/>
+        <ellipse cx="50" cy="24" rx="11" ry="20" transform="rotate(45 50 50)"/>
+        <ellipse cx="50" cy="24" rx="11" ry="20" transform="rotate(90 50 50)"/>
+        <ellipse cx="50" cy="24" rx="11" ry="20" transform="rotate(135 50 50)"/>
+        <ellipse cx="50" cy="24" rx="11" ry="20" transform="rotate(180 50 50)"/>
+        <ellipse cx="50" cy="24" rx="11" ry="20" transform="rotate(225 50 50)"/>
+        <ellipse cx="50" cy="24" rx="11" ry="20" transform="rotate(270 50 50)"/>
+        <ellipse cx="50" cy="24" rx="11" ry="20" transform="rotate(315 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="11" fill="#8a4b0f"/>
+      <circle cx="50" cy="50" r="6" fill="#5a2d05"/>
+    </g>
+  </defs>
+</svg>
+<script src="messages.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
